@@ -1,0 +1,29 @@
+<div th:switch="${contributors}">
+    <h2 th:case="null">No Contributors List! There might be an error!</h2>
+        <div th:case="*">
+            <h2>Contributors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Repository</th>
+                        <th>User</th>
+                        <th>Location</th>
+                        <th>Company</th>
+                        <th>Contributions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contributor : ${contributors}">
+                    <td th:text="${repo}"></td>
+                    <td th:text="${contributor.login}"></td>
+                    <td th:text="${contributor.location}"></td>
+                    <td th:text="${contributor.company}"></td>
+                    <td th:text="${contributor.contributions}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span th:case="*">Text file saved.</span>
+    <p><a href="/index">Return to main page</a></p>
+</div>

@@ -1,0 +1,26 @@
+<form action="#" th:action="@{/getRepo}" th:object="${githubForm}" method="post">
+	<div>
+	    <label for="organisation">Organisation</label>
+	    <input type="text" th:field="*{organisation}" id="organisation" placeholder="Organisation">
+	</div>
+
+    <div>
+        <label for="repository">Repository</label>
+    	<input type="text" th:field="*{repository}" id="repository" placeholder="Repository">
+    </div>
+
+    <div>
+        <label for="personelToken">Personel Token</label>
+	    <input type="text" th:field="*{personelToken}" id="personelToken" placeholder="Personel Token">
+    </div>
+    
+    <div>
+    	<span>*GitHub could limit number of requests. I suggest you to use Personel Token for Authorization, you can leave blank here. <a href="https://github.com/settings/tokens" target="_blank">Get Your Token</a><br></span>
+    </div>
+
+    <div>
+    	<input type="submit" value="Get Top 10 Contributors">   
+    </div>
+    
+    
+</form>
