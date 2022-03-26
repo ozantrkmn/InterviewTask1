@@ -2,6 +2,7 @@ package com.ozan.task1.service;
 
 import static org.mockito.Mockito.times;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,12 +34,12 @@ class GithubRepoServiceTest {
 		form.setOrganisation("apache");
 		form.setRepository("commons-lang");
 		
-		var contributorsList = Collections.EMPTY_LIST;
+		List<Contributor> contributorsList = new ArrayList<>();
 
 		org.mockito.BDDMockito.given(client.getAllContributors(form)).willReturn(contributorsList);
 		
 		//When
-		var detailedContributorsList = service.listAllContributors(form);
+		List<Contributor> detailedContributorsList = service.listAllContributors(form);
 		
 		
 		//Then
@@ -55,17 +56,17 @@ class GithubRepoServiceTest {
 		form.setOrganisation("apache");
 		form.setRepository("commons-lang");
 		
-		var c1 = new Contributor("user1", 1, "http://xxc/", null, null, 66);
-		var c2 = new Contributor("user2", 2, "http://xxc/", null, null, 271);
-		var c3 = new Contributor("user3", 3, "http://xxc/", null, null, 3);
+		Contributor c1 = new Contributor("user1", 1, "http://xxc/", null, null, 66);
+		Contributor c2 = new Contributor("user2", 2, "http://xxc/", null, null, 271);
+		Contributor c3 = new Contributor("user3", 3, "http://xxc/", null, null, 3);
 		
-		var contributorList = List.of(c1, c2, c3);
+		List<Contributor> contributorList = List.of(c1, c2, c3);
 		
 		org.mockito.BDDMockito.given(client.getAllContributors(form)).willReturn(contributorList);
 		
 
 		//When
-		var detailedContributorsList = service.listAllContributors(form);
+		List<Contributor> detailedContributorsList = service.listAllContributors(form);
 		
 		
 		
