@@ -22,6 +22,20 @@ public class Contributor {
 	
 	@JsonProperty("contributions")
 	private int contributions;
+	
+	public Contributor() {
+		
+	}
+
+	public Contributor(String login, long id, String url, String company, String location, int contributions) {
+		super();
+		this.login = login;
+		this.id = id;
+		this.url = url;
+		this.company = company;
+		this.location = location;
+		this.contributions = contributions;
+	}
 
 	public String getLogin() {
 		return login;

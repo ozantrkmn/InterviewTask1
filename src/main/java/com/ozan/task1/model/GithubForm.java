@@ -7,6 +7,17 @@ public class GithubForm {
     private String repository;
     
     private String personelToken;
+    
+    public GithubForm() {
+    	
+    }
+
+	public GithubForm(String organisation, String repository, String personelToken) {
+		super();
+		this.organisation = organisation;
+		this.repository = repository;
+		this.personelToken = personelToken;
+	}
 
 	public String getOrganisation() {
 		return organisation;

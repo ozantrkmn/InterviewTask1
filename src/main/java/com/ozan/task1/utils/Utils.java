@@ -3,22 +3,12 @@ package com.ozan.task1.utils;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
 import com.ozan.task1.model.Contributor;
 import com.ozan.task1.model.GithubForm;
 
 public class Utils {
-	
-	public static final boolean isEmpty(String x) {
-		return (x == null || x.trim().equals(""));
-	}
-	
-	public static final boolean isEmpty(Collection<?> x) {
-		return (x==null || x.isEmpty());
-	}
-	
 	
 	/**
 	 * saves all contributors to the text file
